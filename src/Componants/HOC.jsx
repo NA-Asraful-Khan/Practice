@@ -19,7 +19,7 @@ function HOC() {
   const Counter = ({ count, increment }) => {
     return (
       <div>
-        <p>Count: {count}</p>
+        <h2>Count: {count}</h2>
         <button onClick={increment}>Increment</button>
       </div>
     );

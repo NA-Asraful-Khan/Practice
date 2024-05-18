@@ -48,10 +48,10 @@ function USE_TRANSITATION() {
       {/* Example 2 */}
       <input type="text" value={input} onChange={handleChange} />
       {isPending
-        ? "Loading..."
+        ? <h2>Loading... Please Wait</h2>
         : dataList.map((item, index) => {
-            return <div key={index}>{item}</div>;
-          })}
+          return <div key={index}>{item}</div>;
+        })}
     </div>
   );
 }
