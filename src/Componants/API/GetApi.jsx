@@ -4,22 +4,28 @@ const GetApi = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network Response Was Not OK!");
-                }
+     // Fetch mock data from the JSONPlaceholder API
+     const fetchData = async () => {
+        try {
+            const response = await fetch(
+                "https://jsonplaceholder.typicode.com/users"
+            );
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            const jsonData = await response.json();
+            setData(jsonData);
+            setLoading(false);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
-                return response.json();
-            })
-            .then((data) => {
-                setData(data);
-                setLoading(false)
-                console.log(data)
-            })
-            .catch((error) => console.log("Error:", error))
-    }, [])
+    // Initial data fetch on component mount
+    useEffect(() => {
+        fetchData();
+    }, []);
+
 
     return (
         <div>
