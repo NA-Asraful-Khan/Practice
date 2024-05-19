@@ -1,5 +1,6 @@
 import "./App.css";
 import AllAPI from "./Componants/API/AllAPI";
+import GetDataAPI from "./Componants/AXIOS/GetDataAPI";
 import Form from "./Componants/Form";
 import FormValidation from "./Componants/FormValidation";
 import HOC from "./Componants/HOC";
@@ -13,14 +14,16 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World</h1>
-      
+      {/* ----------------------Hooks  */}
       {/* <Form></Form>
       <FormValidation></FormValidation>
       <HOC></HOC>
       <USE_TRANSITATION></USE_TRANSITATION> */}
-      <ROUTER_ROOT></ROUTER_ROOT>
-
-      <AllAPI></AllAPI>
+      {/* -------------------React Router  */}
+      {/* <ROUTER_ROOT></ROUTER_ROOT> */}
+      {/* ---------------------- api calling */}
+      {/* <AllAPI></AllAPI>
+      <GetDataAPI></GetDataAPI> */}
       
     </div>
   );
